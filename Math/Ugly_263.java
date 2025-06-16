@@ -13,19 +13,19 @@ public class Ugly_263 {
         }
     }
 
-    public static boolean checkUglyNumber(int num)
-    {
-        int mul=1;
-        for(int i=1;i<num;i++)
-        {
-            if(i==2 || i==3 || i==5)
-            {
-                if(num%i==0)
-                {
-                    mul*=i;
-                }
-            }
+    public boolean isUgly(int num) {
+        if (num <= 0) return false;
+
+        while (num % 2 == 0) {
+            num /= 2;
         }
-        return num==mul;
+        while (num % 3 == 0) {
+            num /= 3;
+        }
+        while (num % 5 == 0) {
+            num /= 5;
+        }
+
+        return num == 1;
     }
 }
